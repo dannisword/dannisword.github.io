@@ -1,11 +1,30 @@
-# 系統簡介
+# Introduction
 
-這個網站用來整理本專案的開發文件，包含：
+This documentation describes the design, architecture, and technical details of the system.
 
-- 系統目的與範圍
-- 架構與技術棧
-- API 設計與命名規則
-- 部署流程與環境設定
-- 維運、監控與常見問題
+## Overview
 
-> 建議把這一頁當成新進工程師的「起點」文件。
+The system consists of:
+
+- Backend microservices (Java, .NET)
+- API Gateway (YARP / Nginx)
+- Frontend dashboard (Vue 3 / ECharts / Three.js)
+- Database (MSSQL / MongoDB / Redis)
+- IoT & Energy devices (Modbus / MQTT)
+
+## Purpose
+
+- Provide modular and scalable services  
+- Support WMS / EMS operational needs  
+- Offer visualization and monitoring  
+- Enable integration with external WCS / ERP  
+
+---
+
+<p align="center">
+
+➡️ 下一頁： [System Architecture](architecture.md)  
+
+[回 Docs 首頁](../README.md#docs)
+
+</p>
