@@ -3,111 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我的個人網站</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-    }
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      margin-bottom: 0.5rem;
-    }
-    h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #9ca3af;
-      margin-top: 0;
-    }
-    .buttons {
-      margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .btn {
-      padding: 0.75rem 1.5rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      text-decoration: none;
-      color: #e5e7eb;
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
-    }
-    .btn-primary {
-      background: #22c55e;
-      border-color: #22c55e;
-      color: #0f172a;
-      font-weight: 600;
-    }
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.6);
-    }
-    .tags {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-    }
-    .tag {
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.8rem;
-      color: #6b7280;
-    }
-  </style>
+  <title>系統開發文件</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <!-- Markdown 轉 HTML：使用 CDN 版本的 marked -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <main class="hero">
-    <h1>Hi, 我是 XXX 👋</h1>
-    <h2>後端 / 前端 / IoT / Digital Twin 工程師</h2>
+  <div class="layout">
+    <!-- 側邊欄 -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-circle">D</div>
+        <div class="project-info">
+          <div class="project-name">Demo 系統</div>
+          <div class="project-subtitle">開發文件</div>
+        </div>
+      </div>
 
-    <p>這裡是我的個人網站，放一些專案、筆記和實驗。</p>
+      <nav class="menu">
+        <div class="menu-group">
+          <div class="menu-group-title">總覽</div>
+          <a href="#intro" class="menu-item" data-doc="intro">
+            系統簡介
+          </a>
+          <a href="#architecture" class="menu-item" data-doc="architecture">
+            系統架構
+          </a>
+        </div>
 
-    <div class="buttons">
-      <a class="btn btn-primary" href="https://github.com/你的帳號" target="_blank">
-        GitHub
-      </a>
-      <a class="btn" href="mailto:you@example.com">
-        Email 聯絡我
-      </a>
-    </div>
+        <div class="menu-group">
+          <div class="menu-group-title">開發</div>
+          <a href="#api" class="menu-item" data-doc="api">
+            API & 模組設計
+          </a>
+          <a href="#deployment" class="menu-item" data-doc="deployment">
+            部署與環境
+          </a>
+          <a href="#operations" class="menu-item" data-doc="operations">
+            維運與監控
+          </a>
+        </div>
+      </nav>
 
-    <div class="tags">
-      <span class="tag">Java / Spring Boot</span>
-      <span class="tag">.NET / YARP</span>
-      <span class="tag">Vue 3 / Three.js</span>
-      <span class="tag">Digital Twin / EMS</span>
-    </div>
-  </main>
+      <footer class="sidebar-footer">
+        <span>© <span id="year"></span> Project Docs</span>
+      </footer>
+    </aside>
 
-  <footer>
-    © <span id="year"></span> My Site. Powered by GitHub Pages.
-  </footer>
+    <!-- 主內容 -->
+    <main class="content">
+      <header class="content-header">
+        <div>
+          <h1 id="page-title">系統簡介</h1>
+          <p id="page-desc" class="page-desc">
+            開發文件網站樣板，可以用 Markdown 編寫內容。
+          </p>
+        </div>
+        <!-- 右上角可以放 GitHub 連結 -->
+        <a id="github-link" href="https://github.com/你的帳號/你的專案" target="_blank" class="gh-link">
+          GitHub Repo
+        </a>
+      </header>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+      <article id="doc-content" class="doc-content">
+        <!-- 這裡會由 app.js 動態塞入 markdown 轉成的 HTML -->
+      </article>
+    </main>
+  </div>
+
+  <script src="assets/app.js"></script>
 </body>
 </html>
