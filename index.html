@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的個人網站</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #9ca3af;
+      margin-top: 0;
+    }
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      text-decoration: none;
+      color: #e5e7eb;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: #22c55e;
+      border-color: #22c55e;
+      color: #0f172a;
+      font-weight: 600;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.6);
+    }
+    .tags {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .tag {
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <h1>Hi, 我是 XXX 👋</h1>
+    <h2>後端 / 前端 / IoT / Digital Twin 工程師</h2>
+
+    <p>這裡是我的個人網站，放一些專案、筆記和實驗。</p>
+
+    <div class="buttons">
+      <a class="btn btn-primary" href="https://github.com/你的帳號" target="_blank">
+        GitHub
+      </a>
+      <a class="btn" href="mailto:you@example.com">
+        Email 聯絡我
+      </a>
+    </div>
+
+    <div class="tags">
+      <span class="tag">Java / Spring Boot</span>
+      <span class="tag">.NET / YARP</span>
+      <span class="tag">Vue 3 / Three.js</span>
+      <span class="tag">Digital Twin / EMS</span>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> My Site. Powered by GitHub Pages.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
